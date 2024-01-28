@@ -3,7 +3,6 @@ const Questions = require("../Model/Question");
 const createQuestion = async (req, res) => {
   try {
     const { question } = req.body;
-
     const newQuestion = new Questions({
       model: {
         question: question,
@@ -22,7 +21,7 @@ const createQuestion = async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Internal Server Error" });
+    res.status(500).json({ message: "500 Internal Server Error" });
   }
 };
 
